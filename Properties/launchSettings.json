@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "音乐播放器": {
+      "commandName": "Project",
+      "remoteDebugEnabled": false
+    }
+  }
+}

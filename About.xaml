@@ -1,0 +1,182 @@
+﻿<Window x:Class="音乐播放器.About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+        xmlns:local="clr-namespace:音乐播放器"
+        mc:Ignorable="d"
+        Title="About"
+        Height="250"
+        Width="408"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        Loaded="Window_Loaded"
+        MouseDown="Window_MouseDown">
+    <Grid>
+        <Border BorderThickness="1" BorderBrush="#FFAFAFAF" CornerRadius="10,10,10,10" OpacityMask="White" Name="top">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid Grid.Row="0"
+                    VerticalAlignment="Center">
+                    <TextBlock
+                        Text="SMSC Media Player"
+                        Margin="3,0,0,0"
+                        FontSize="14"/>
+                </Grid>
+                <Grid Grid.Column="2">
+                    <StackPanel 
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right">
+                        <Button  Height="30"
+                            Width="30"
+                            Content="&#xf2d1;"
+                            Margin="0,-5,0,0"
+                            FontSize="12"
+                            pu:ButtonHelper.WaitingContent="{x:Null}"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            FontFamily="{StaticResource FontAwesome}"
+                            pu:ButtonHelper.ButtonStyle="Link"
+                            x:Name="Min_Window"
+                            BorderBrush="#00FFFFFF"
+                            Foreground="#963F3F3F"
+                            pu:ButtonHelper.HoverBrush="#3F3F3F" Click="Min_Window_Click"/>
+                        <Button  Height="30"
+                            Width="30"
+                            Content="&#xf00d;"
+                            Margin="0,-4,0,0"
+                            pu:ButtonHelper.WaitingContent="{x:Null}"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            FontFamily="{StaticResource FontAwesome}"
+                            pu:ButtonHelper.ButtonStyle="Link"
+                            x:Name="Close_Window"
+                            BorderBrush="#00FFFFFF"
+                            Foreground="#963F3F3F"
+                            pu:ButtonHelper.HoverBrush="#3F3F3F" Click="Close_Window_Click"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <StackPanel
+                        Margin="5,0,0,0"
+                        Orientation="Vertical">
+                        <StackPanel
+                            Margin="0,5,0,0"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                x:Name="About_AppName_label"
+                                Text="软件名称:"/>
+                            <TextBlock
+                                Text="SMSC音乐播放器"
+                                Margin="10,0,0,0"
+                                Foreground="#FF707070"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="0,10,0,0"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                x:Name="About_AppVersion_label"
+                                Text="当前版本号:"/>
+                            <TextBlock
+                                Text="v1.0"
+                                Margin="10,0,0,0"
+                                Foreground="#FF707070"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="0,10,0,0"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                x:Name="About_NewVersion_label"
+                                Text="最新版本号:"/>
+                            <TextBlock
+                                Text=""
+                                Name="About_NewVersion"
+                                Margin="10,0,0,0"
+                                Foreground="#FF707070"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="0,-4,0,0"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                x:Name="About_Github_label"
+                                Text="Github主页:"/>
+                            <TextBlock
+                                Text="https://github.com/cnxyya/SMSC-Music-Player"
+                                Cursor="Hand"
+                                Margin="10,0,0,0"
+                                Foreground="#FF707070" MouseDown="TextBlock_MouseDown"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="0,10,0,0"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                x:Name="About_Gitee_label"
+                                Text="Gitee主页:"/>
+                            <TextBlock
+                                Text="https://gitee.com/zxcvbnm129/smsc-music-player"
+                                Cursor="Hand"
+                                Margin="10,0,0,0"
+                                Foreground="#FF707070" MouseDown="TextBlock_MouseDown_1"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="0,10,0,0"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                x:Name="About_BBS_label"
+                                Text="论坛介绍页:"/>
+                            <TextBlock
+                                Text="http://bbs.talk4fun.net/threads/11/"
+                                Cursor="Hand"
+                                Margin="10,0,0,0"
+                                Foreground="#FF707070" MouseDown="TextBlock_MouseDown_2"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="0,10,0,0"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                x:Name="About_Blog_label"
+                                Text="博客介绍页:"/>
+                            <TextBlock
+                                Text="http://tly.unaux.com/thread/thread-2021-11-12-83.html"
+                                Cursor="Hand"
+                                Margin="10,0,0,0"
+                                Foreground="#FF707070" MouseDown="TextBlock_MouseDown_3"/>
+                        </StackPanel>
+                        <StackPanel
+                            Margin="0,10,0,0"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                Text="免责声明:"/>
+                            <Viewbox>
+                                <TextBlock
+                                    Text="本软件只提供个人免费使用。切勿滥用,贩卖与其他用户,出事概不负责,也不关本软件开发者任何关系。"
+                                    Width="330"
+                                    MaxWidth="330"
+                                    Margin="10,0,0,0"
+                                    Foreground="#FF707070"
+                                    TextWrapping="Wrap"/>
+                            </Viewbox>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

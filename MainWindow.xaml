@@ -1,0 +1,179 @@
+﻿<Window x:Class="音乐播放器.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:pu="clr-namespace:Panuon.UI.Silver;assembly=Panuon.UI.Silver"
+        xmlns:cefsharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:tl="clr-namespace:音乐播放器.Control"
+        xmlns:local="clr-namespace:音乐播放器"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="580"
+        Width="1040"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        MouseDown="Window_MouseDown"
+        Loaded="Window_Loaded">
+    <Grid>
+        <Border BorderThickness="1" BorderBrush="#FFAFAFAF" CornerRadius="10,10,10,10" OpacityMask="White" Name="top">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid MouseDown="Grid_MouseDown">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="300"/>
+                        <ColumnDefinition Width="1"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Grid>
+                    <TextBlock
+                        VerticalAlignment="Center"
+                        Margin="20,0,0,0"
+                        x:Name="Window_Title"
+                        HorizontalAlignment="Left"
+                        FontSize="16" FontFamily="Comic Sans MS"/>
+                    <TextBox
+                        Visibility="Hidden"
+                        Name="Clear"/>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <StackPanel Orientation="Horizontal">
+                        <Button
+                            Width="100"
+                            Height="50"
+                            Margin="10"
+                            Content="按钮1"
+                            Click="Button_Click_1"/>
+                        
+                        <Button 
+                            Width="100"
+                            Height="50"
+                            Content="按钮2"
+                            Click="Button_Click"/>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="0" Grid.Column="2">
+                    <StackPanel
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Margin="250,0,0,0">
+                        <tl:SearchTextBox 
+                                Height="26"
+                                Width="200"
+                                x:Name="Search_Input"
+                                OnSearch="Search_Input_OnSearch" KeyDown="Search_Input_KeyDown"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button  Height="30"
+                            Width="30"
+                            Content="&#xf211;"
+                            pu:ButtonHelper.WaitingContent="{x:Null}"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            FontFamily="{StaticResource FontAwesome}"
+                            pu:ButtonHelper.ButtonStyle="Link"
+                            x:Name="open_BBS"
+                            BorderBrush="#00FFFFFF"
+                            Foreground="#963F3F3F"
+                            pu:ButtonHelper.HoverBrush="#3F3F3F" Click="open_BBS_Click"/>
+                        <Button  Height="30"
+                            Width="30"
+                            Content="&#xf0ce;"
+                            pu:ButtonHelper.WaitingContent="{x:Null}"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            FontFamily="{StaticResource FontAwesome}"
+                            pu:ButtonHelper.ButtonStyle="Link"
+                            x:Name="open_Blog"
+                            BorderBrush="#00FFFFFF"
+                            Foreground="#963F3F3F"
+                            pu:ButtonHelper.HoverBrush="#3F3F3F" Click="open_Blog_Click"/>
+                        <Button  Height="30"
+                            Width="30"
+                            Content="&#xf05a;"
+                            pu:ButtonHelper.WaitingContent="{x:Null}"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            FontFamily="{StaticResource FontAwesome}"
+                            pu:ButtonHelper.ButtonStyle="Link"
+                            x:Name="open_About"
+                            BorderBrush="#00FFFFFF"
+                            Foreground="#963F3F3F"
+                            pu:ButtonHelper.HoverBrush="#3F3F3F" Click="open_About_Click"/>
+                        <Button  Height="30"
+                            Width="30"
+                            Content="&#xf013;"
+                            pu:ButtonHelper.WaitingContent="{x:Null}"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            FontFamily="{StaticResource FontAwesome}"
+                            pu:ButtonHelper.ButtonStyle="Link"
+                            x:Name="Settings"
+                            BorderBrush="#00FFFFFF"
+                            Foreground="#963F3F3F"
+                            pu:ButtonHelper.HoverBrush="#3F3F3F" Click="Settings_Click"/>
+                        <TextBlock
+                            Width="2"
+                            Height="18"
+                            Background="#FF707070" Foreground="#FF707070"/>
+                        <Button  Height="30"
+                            Width="30"
+                            Content="&#xf2d1;"
+                            pu:ButtonHelper.WaitingContent="{x:Null}"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            FontFamily="{StaticResource FontAwesome}"
+                            pu:ButtonHelper.ButtonStyle="Link"
+                            x:Name="Min_Window"
+                            BorderBrush="#00FFFFFF"
+                            Foreground="#963F3F3F"
+                            pu:ButtonHelper.HoverBrush="#3F3F3F" Click="Min_Window_Click" />
+                        <Button  Height="30"
+                            Width="30"
+                            Content="&#xf096;"
+                            Visibility="Hidden"
+                            pu:ButtonHelper.WaitingContent="{x:Null}"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            FontFamily="{StaticResource FontAwesome}"
+                            pu:ButtonHelper.ButtonStyle="Link"
+                            x:Name="NorMal_Window"
+                            BorderBrush="#00FFFFFF"
+                            Foreground="#963F3F3F"
+                            pu:ButtonHelper.HoverBrush="#3F3F3F" Click="NorMal_Window_Click" />
+                        <Button  Height="30"
+                            Width="30"
+                            Content="&#xf2d0;"
+                            pu:ButtonHelper.WaitingContent="{x:Null}"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            FontFamily="{StaticResource FontAwesome}"
+                            pu:ButtonHelper.ButtonStyle="Link"
+                            x:Name="Max_Window"
+                            Margin="-30,0,0,0"
+                            BorderBrush="#00FFFFFF"
+                            Foreground="#963F3F3F"
+                            pu:ButtonHelper.HoverBrush="#3F3F3F" Click="Max_Window_Click" />
+                        <Button  Height="30"
+                            Width="30"
+                            Content="&#xf00d;"
+                            FontSize="20"
+                            Margin="0,-4,0,0"
+                            pu:ButtonHelper.WaitingContent="{x:Null}"
+                            pu:ButtonHelper.ClickStyle="Sink"
+                            FontFamily="{StaticResource FontAwesome}"
+                            pu:ButtonHelper.ButtonStyle="Link"
+                            x:Name="Close_Window"
+                            BorderBrush="#00FFFFFF"
+                            Foreground="#963F3F3F"
+                            pu:ButtonHelper.HoverBrush="#3F3F3F" Click="Close_Window_Click" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

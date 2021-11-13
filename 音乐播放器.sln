@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "音乐播放器", "音乐播放器.csproj", "{B6DAF116-1792-4A00-8115-F561C01D5CB1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6DAF116-1792-4A00-8115-F561C01D5CB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DAF116-1792-4A00-8115-F561C01D5CB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DAF116-1792-4A00-8115-F561C01D5CB1}.Debug|x64.ActiveCfg = Debug|x64
+		{B6DAF116-1792-4A00-8115-F561C01D5CB1}.Debug|x64.Build.0 = Debug|x64
+		{B6DAF116-1792-4A00-8115-F561C01D5CB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DAF116-1792-4A00-8115-F561C01D5CB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DAF116-1792-4A00-8115-F561C01D5CB1}.Release|x64.ActiveCfg = Release|x64
+		{B6DAF116-1792-4A00-8115-F561C01D5CB1}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D8C5560-0400-4007-BB2D-327BC974F688}
+	EndGlobalSection
+EndGlobal
